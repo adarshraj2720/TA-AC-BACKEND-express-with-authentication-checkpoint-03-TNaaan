@@ -96,7 +96,7 @@ router.get('/date',auth.isUser,(req,res,next)=>{
                 acc =acc+cv.amount;
                 return acc; 
             },0)
-            res.render('dashboard',{balance:totalincome,income:income,expense:[],totalexpense});
+            res.render('dashboard',{balance:totalincome,income:income,expense:[],totalexpense:0,totalincome});
         })
         
     // })
@@ -109,7 +109,7 @@ router.get('/date',auth.isUser,(req,res,next)=>{
                     acc =acc+cv.amount;
                     return acc; 
                 },0)
-                res.render('dashboard',{balance:totalexpense,income:[],expense:expense,totalincome});
+                res.render('dashboard',{balance:totalexpense,income:[],expense:expense,totalincome:0,totalexpense});
             })
             
         

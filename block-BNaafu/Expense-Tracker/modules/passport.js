@@ -16,14 +16,18 @@ passport.use(new GoogleStrategy({
       console.log(profile);
       var profileData ={
           name :profile._json.name,
-          username : profile._json.name,
+        //   username : profile._json.name,
           email :profile._json.email,
-          photo : profile._json.picture
+          password:profile._json.given_name,
+        //   photo : profile._json.picture
+        isAdmin:false,
       }
+      console.log(profileData)
 User.findOne({email: profile._json.email},(err,user)=>{
     if(err) return done(err);
     if(!user){
         User.create(profileData,(err,addeduser)=>{
+            console.log(addeduser,"adduser")
             if(err) return done(err)
             return done(null,addeduser)
         })
@@ -49,9 +53,11 @@ done(null,user)
         console.log(profile);
         var profileData ={
             name :profile.displayName,
-            username : profile.username,
+            // username : profile.username,
             email :profile._json.blog,
-            photo : profile._json.avatar_url
+            password:profile._json.blog,
+            // photo : profile._json.avatar_url
+            isAdmin:false
         }
   User.findOne({email: profile._json.blog},(err,user)=>{
       if(err) return done(err);
@@ -63,7 +69,6 @@ done(null,user)
       }
   done(null,user)
   })
-  
     }))
 
 
@@ -74,9 +79,9 @@ done(null,user)
 
 
   passport.deserializeUser(function(id,done){
-      User.findById(id,"name email username",function(err,user){
+      User.findById(id,"name email isAdmin",function(err,user){
           done(err,user)
       })
-  })
+  });
 
  
