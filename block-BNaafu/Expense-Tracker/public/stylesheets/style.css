@@ -1,0 +1,220 @@
+/* body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+} */
+*{
+  margin: 0;
+  padding: 0;
+}
+header{
+  padding: 40px 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.register-form-body{
+  background-color: #32425B;
+}
+.login-form-body{
+  background-color: #9C4E9B;
+}
+.logo{
+  color: white;
+  text-decoration: none;
+  /* font-size: 30px;
+  font-weight: 1000; */
+}
+strong{
+   font-size: 30px;
+  font-weight: 1000; 
+  letter-spacing: 2px;
+}
+.header-logout {
+  background-color: #57D5B9;
+  color: white;
+  padding: 6px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 18px;
+}
+.header-login{
+  background-color: #57D5B9;
+  color: white;
+  padding: 6px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 18px;
+  margin-right: 20px;
+}
+h1{
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  font-size: 26px;
+}
+form{
+  margin: 0 auto;
+  width:18%;
+}
+input{
+  border: 0;
+  border: 2px solid #55657E;
+  width: 99%;
+  /* margin: 10px 0px; */
+  margin-bottom: 14px;
+  margin-top: 6px;
+  background-color: transparent;
+  height: 34px;
+  outline: none;
+  color: white;
+  /* padding: 4px; */
+}
+input::placeholder{
+  color: #55657E;
+  padding-left:6px ;
+}
+.submit{
+  width: 100%;
+  height: 34px;
+  background-color: #57D5B9;
+  border: 0;
+  border-radius: 2px;
+  color: white;
+  font-size: 16px;
+}
+label{
+
+  color: white;
+  font-weight: 500;
+    letter-spacing:2px;
+}
+.login-header{
+  color: black;
+}
+.login-form{
+  background-color: white;
+  padding: 50px 20px;
+  border-radius: 4px;
+}
+.login-form > .email{
+background-color: silver;
+border: 0;
+height: 40px;
+}
+.login-submit{
+  width: 100%;
+  height: 50px;
+  background-color: #C54C8C;
+  border: 0;
+  border-radius: 2px;
+  color: white;
+  font-size: 16px;
+}
+small{
+  text-align: center;
+  display: block;
+  color: silver;
+  font-size: 14px;
+  font-weight: 800;
+  margin: 20px 0px;
+}
+.member{
+  color: #727070;
+  text-align: center;
+  margin-top: 50px;
+  
+}
+.social-login{
+  display: flex;
+  justify-content: space-around;
+  
+}
+.social-login-btn{
+  border: 1px solid silver;
+  text-decoration: none;
+  padding: 4px;
+}
+.google{
+  color: red;
+  font-size: 12px;
+  font-weight: 800;
+}
+.github{
+  color: black;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dashboard{
+  display: flex;
+  justify-content: space-between;
+}
+.income-form{
+  width: 90%;
+  margin: 0 auto;
+}
+.income-form input{
+  color: black;
+}
+.dashboard-header{
+  background-color: black;
+}
+.select-option{
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.income-submit-btn{
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  background-color: #57D5B9;
+  color: white;
+  border: 0;
+  font-weight: 800;
+}
+nav{
+  display: flex;
+  align-items: center;
+}
+.user{
+  color: white;
+  margin-right: 20px;
+}
+h6{
+  font-size: 14px;
+  color: white;
+  margin-right: 20px;
+}
+.income-list{
+  margin-top: 20px;
+  
+}
+.income-all{
+  margin: 6px 0px;
+  color: gray;
+  
+}
+hr{
+  margin-top: 4px;
+}
+/* .amount{
+  color: green;
+
+} */
+h5{
+  font-weight: 800;
+  font-size: 14px;
+  margin: 6px 0px;
+}
+p{
+  margin: 6px 0px;
+}
