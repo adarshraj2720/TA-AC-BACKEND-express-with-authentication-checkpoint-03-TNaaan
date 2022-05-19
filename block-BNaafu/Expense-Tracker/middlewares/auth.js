@@ -1,5 +1,10 @@
 var User = require('../modals/user')
 
+var Income = require('../modals/income')
+
+var Expense = require('../modals/expense')
+
+var gettotal = require('../routes/dashboard')
 
 module.exports={
     loggedInUser:(req,res,next)=>{
@@ -51,5 +56,27 @@ module.exports={
         } else {
           res.redirect('/dashboard')
         }
+    },
+    allfilter:function(req,res,next){
+        Income.find({userID:req.user.id}, (err,income)=>{
+            var totalincome  = income.reduce((acc,cv)=>{
+                acc =acc+cv.amount;
+                return acc; 
+            },0)
+        
+        
+        Expense.find({userID:req.user.id}, (err,expense)=>{
+            var totalexpense  = expense.reduce((acc,cv)=>{
+                acc =acc+cv.amount;
+                return acc; 
+            },0)
+    
+        var balance = totalincome-totalexpense
+        res.locals.bal=balance
+        })
+        next()
+    })
+
     }
+
 }

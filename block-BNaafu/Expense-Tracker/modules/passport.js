@@ -31,8 +31,10 @@ User.findOne({email: profile._json.email},(err,user)=>{
             if(err) return done(err)
             return done(null,addeduser)
         })
+    }else{
+        done(null,user)
     }
-done(null,user)
+
 })
 
   }))
@@ -67,7 +69,10 @@ done(null,user)
               return done(null,addeduser)
           })
       }
-  done(null,user)
+      else{
+        done(null,user)
+      }
+
   })
     }))
 
