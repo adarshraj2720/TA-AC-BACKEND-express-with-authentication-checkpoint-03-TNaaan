@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <header class="dashboard-header">
+        <a class="logo" href="/"><strong>EXPENSE TRACKER</strong></a>
+        <nav>
+            <i class="user">Hii <%=user.name%></i>
+            <h6>Wallet: <%=bal%> Rs</h6>
+            <a class="header-logout" href="/users/logout">Log Out</a>
+        </nav>
+    </header>
+   
+    
+    <h1>Dashboard</h1>
+<main class="dashboard">
+
+
+    <section>
+
+  
+    <form class="income-form" action="/dashboard/income" method="POST">
+        <h3>Add Income</h3>
+        <select class="select-option" name="source" id="source">
+            <option value="">Select Income</option>
+            <option value="Salary">Salary</option>
+            <option value="Trading">Trading</option>
+            <option value="Business">Business</option>
+        </select>
+        <input type="number" name="amount" id="amount" placeholder="Enter the Amount">
+        <input type="date" name="date" id="date">
+        <button class="income-submit-btn" type="submit">Add Income</button>
+    </form>
+    <form class="income-form" action="/dashboard/expense" method="POST">
+        <h3>Add Expense</h3>
+       <select class="select-option" name="category" id="category">
+        <option value="">Select Expense</option>
+           <option value="Health">Health</option>
+           <option value="Grocery">Grocery</option>
+           <option value="Lifestyle">Lifestyle</option>
+       </select>
+        <input type="number" name="amount" id="amount" placeholder="Enter the Amount">
+        <input type="date" name="date" id="date">
+        <button class="income-submit-btn" type="submit">Add Expense</button>
+    </form>
+
+ 
+
+</section>
+<section>
+    <div class="income-list">
+        <h2>Income:</h2>
+        <h5>Amount: <%=totalincome%></h5>
+        <% income.forEach((inc)=>{ %>
+            <div class="income-all">
+           <p>Source:<%=inc.source%></p> 
+           <p>Amount:<%=inc.amount%></p> 
+           <p>Date:<%=inc.date%></p> 
+           <hr> 
+        </div>
+       <% })%>
+  
+    </div>
+    <div class="income-list">
+        <h2>Expense:</h2>
+        <h5>Amount:<%=totalexpense%></h5>
+        <% expense.forEach((exp)=>{ %>
+            <div class="income-all">
+           <p>category:<%=exp.category%></p> 
+           <p>Amount:<%=exp.amount%></p> 
+           <p>Date:<%=exp.date%></p> 
+           <hr>
+        </div>
+       <% })%>
+    </div>
+</section>
+    <section>
+        <form class="income-form" action="/dashboard/date" method="GET">
+            <h4>Filter By DATE</h4>
+            <input type="date" name="start" id="start">
+            <input type="date" name="end" id="end">
+            <button class="income-submit-btn" type="submit">Filter by Date</button>
+        </form>
+    <form class="income-form" action="/dashboard/date" method="GET">
+        <h4>Filter By INCOME</h4>
+        <select class="select-option" name="source" id="source">
+            <option value="">Select Income</option>
+            <option value="Salary">Salary</option>
+            <option value="Trading">Trading</option>
+            <option value="Business">Business</option>
+        </select>
+        <button class="income-submit-btn" type="submit">Filter by Income</button>
+    </form>
+    <form class="income-form" action="/dashboard/date" method="GET">
+        <h4>Filter By EXPENSE</h4>
+        <select  class="select-option" name="category" id="category">
+            <option value="">Select Expense</option>
+            <option value="Health">Health</option>
+            <option value="Grocery">Grocery</option>
+            <option value="Lifestyle">Lifestyle</option>
+        </select>
+        <button class="income-submit-btn" type="submit">Filter by Expense</button>
+    </form>
+    <form class="income-form" action="/dashboard/date" method="GET">
+        <h4>Filter By MONTH</h4>
+        <input type="month" name="month" id="date">
+        <button class="income-submit-btn" type="submit">Filter by Month</button>
+    </form>
+
+</section>
+
+</main>
+
+
+</body>
+</html>

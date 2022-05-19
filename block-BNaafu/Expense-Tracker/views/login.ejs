@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Login</title>
+</head>
+
+<body class="login-form-body">
+    <header>
+        <a class="logo" href="/"><strong>EXPENSE TRACKER</strong></a>
+        <nav>
+            <a class="header-logout" href="/users/register">Sign Up</a>
+        </nav>
+    </header>
+    <!-- <section class="login-form"> -->
+
+   
+    <form class="login-form" action="/users/login" method="POST">
+        <h1 class="login-header">LOGIN</h1>
+        <input class="email" type="text" name="email" id="email" placeholder="Email">
+        <input class="email" type="password" name="password" id="password" placeholder="Password">
+        <button class="login-submit" type="submit">LOGIN</button> <br>
+
+        <small>Or login with</small>
+        <div class="social-login">
+            <a class="social-login-btn google" href="/auth/google">LOG in With Google</a><br>
+            <a class="social-login-btn github" href="/auth/github">LOG in With Github</a>
+        </div>
+
+        <p class="member">Not a Member? <a href="/users/register">Sign up now</a></p>
+    </form>
+ 
+<!-- </section> -->
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Register</title>
+</head>
+<body class="register-form-body">
+    <header>
+        <a class="logo" href="/"><strong>EXPENSE TRACKER</strong></a>
+        <nav>
+            <a class="header-logout" href="/users/logout">Log In</a>
+        </nav>
+    </header>
+    <h1>REGISTER</h1>
+    <form action="/users/register" method="POST">
+        <label for="name">NAME
+        <input type="text" name="name" id="name" placeholder="Name"><br>
+    </label>
+<label for="email">EMAIL
+    <input type="text" name="email" id="email" placeholder="Email"><br>
+</label>
+        <label for="password">PASSWORD
+            <input type="password" name="password" id="password" placeholder="Password"><br>
+        </label>
+        <label for="age">AGE
+            <input type="number" name="age" id="age" placeholder="Age"><br>
+
+        </label>
+       <label for="phone">PHONE
+        <input type="number" name="phone" id="phone" placeholder="Phone"><br>
+       </label>
+        <label for="country">COUNTRY
+            <input type="text" name="country" id="country" placeholder="Country"><br>
+        </label>
+       
+        <button class="submit" type="submit">CREATE ACCOUNT</button>
+    </form>
+</body>
+</html>
